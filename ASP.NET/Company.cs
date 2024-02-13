@@ -2,6 +2,6 @@
 
 public class Company
 {
-	public string Name { get; set; } = "";
-	public int Employyes { get; set; } = 0;
+    public string Name { get; set; } = "Unknown";
+    public int Employees { get; set; } = 0;
 }
