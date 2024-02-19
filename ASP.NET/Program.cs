@@ -7,8 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddTransient<ICalcService, CalcService>().AddTransient<ITimeAnalyzer, TimeAnalyzer>();
 var app = builder.Build();
-app.MapGet("/", async context => context.Response.Redirect("/1/")
-);
+app.MapGet("/", async context => context.Response.Redirect("/1/"));
 app.MapGet("/1/", async context =>
 {
     var calcService = app.Services.GetService<ICalcService>();
