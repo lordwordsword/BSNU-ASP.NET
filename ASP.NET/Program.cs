@@ -1,38 +1,55 @@
-using System.Text;
+using Microsoft.Extensions.Logging;
+
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Configuration.AddJsonFile("cfg.json");
 
-Library? library = builder.Configuration.GetSection("Library").Get<Library>() ;
+builder.Logging.AddFile($"logs/myapp-{DateTime.UtcNow}.txt".Replace(":", "_"), LogLevel.Error);
 
+
+//.AddFile(Path.Combine(Directory.GetCurrentDirectory(), "logger.txt")));
 var app = builder.Build();
-app.MapGet("/", async context => context.Response.Redirect("/library"));
-app.MapGet("/library", () => "Hello, user!");
-app.MapGet("/library/books", () => {
-    StringBuilder stringBuilder = new StringBuilder();
-    if (library != null)
+
+app.MapGet("/", async (context) =>
+{
+    context.Response.ContentType = "text/html; charset=utf-8";
+    await context.Response.SendFileAsync("html/index.html");
+});
+
+app.MapPost("/check-cookies", async (context) =>
+{
+   
+
+    try
     {
-        foreach (var book in library.books)
+        var form = await context.Request.ReadFormAsync();
+
+        var name = form["name"];
+        var dateTime = form["datetime"];
+        throw new InvalidOperationException("This is a test exception");
+
+        if (context.Request.Cookies.ContainsKey("name"))
         {
-            stringBuilder.Append($"Title: {book.Title}.\nAuthor: {book.Author}.\n\n");
+            await context.Response.WriteAsync($"Hello {name}!");
+        }
+        else
+        {
+            context.Response.Cookies.Append("name", name, new CookieOptions
+            {
+                Expires = Convert.ToDateTime(dateTime)
+            });
+
+            await context.Response.WriteAsync("Hello World!");
         }
     }
-    return stringBuilder.ToString();
-});
-app.MapGet("/library/profile/{id?}", (int? id) =>
-{
-    Profile profile = new Profile();
-
-    if (library != null && id != null)
+    catch (InvalidOperationException ex)
     {
-        profile = library.profiles[(int)id];
+        var path = context.Request.Path;
+        app.Logger.LogError($"{path}\n{ex.Message}\n{ex.Data}\n{ex.Source}\n\n");
     }
-    if (profile != null) { 
-        return $"Profile name: {profile.Name}.\nProfile surname: {profile.Surname}.";
-    }
-    return "";
-
 });
 
 app.Run();
+
