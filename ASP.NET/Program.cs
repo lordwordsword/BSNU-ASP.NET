@@ -28,7 +28,6 @@ app.MapPost("/check-cookies", async (context) =>
 
         var name = form["name"];
         var dateTime = form["datetime"];
-        throw new InvalidOperationException("This is a test exception");
 
         if (context.Request.Cookies.ContainsKey("name"))
         {
