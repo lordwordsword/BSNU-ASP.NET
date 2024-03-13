@@ -10,6 +10,9 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.MapControllerRoute(
-name: "default",
-pattern: "{controller=Main}/{action=Index}");
+    name: "default",
+    pattern: "",
+    defaults: new { controller = "File", action = "DownloadFile" }
+);
+
 app.Run();

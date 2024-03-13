@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "7WzZnwsJA0aNEdLSIUJqsrSqZYeMROXcwHeJrGypNBo=",
+  "Hash": "8qgiIjjP3TnjWmIP3It+5Gr0qX3y/+ksw6/LFEMmJ/w=",
   "Source": "ASP.NET",
   "BasePath": "_content/ASP.NET",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ASP.NET\\wwwroot",
+      "Source": "ASP.NET",
+      "ContentRoot": "C:\\Users\\user\\source\\repos\\ASP.NET\\ASP.NET\\wwwroot\\",
+      "BasePath": "_content/ASP.NET",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }
