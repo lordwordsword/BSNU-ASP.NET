@@ -17,19 +17,3 @@ build_property.SupportLocalizedComponentNames =
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = C:\Users\user\source\repos\ASP.NET\ASP.NET
 build_property._RazorSourceGeneratorDebug = 
-
-[C:/Users/user/source/repos/ASP.NET/ASP.NET/Views/Main/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/user/source/repos/ASP.NET/ASP.NET/Views/Main/ProductCountSelection.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxQcm9kdWN0Q291bnRTZWxlY3Rpb24uY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/user/source/repos/ASP.NET/ASP.NET/Views/Main/ProductSelection.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxQcm9kdWN0U2VsZWN0aW9uLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/user/source/repos/ASP.NET/ASP.NET/Views/Main/Result.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxSZXN1bHQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
