@@ -12,7 +12,7 @@ app.UseRouting();
 app.MapControllerRoute(
     name: "default",
     pattern: "",
-    defaults: new { controller = "File", action = "DownloadFile" }
+    defaults: new { controller = "Main", action = "AddProduct" }
 );
 ProductRepository.init();
 app.Run();
