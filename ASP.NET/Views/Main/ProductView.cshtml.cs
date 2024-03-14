@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace ASP.NET.Views.File
+namespace ASP.NET.Views.Main
 {
-    public class DownloadFileModel : PageModel
+    public class ProductViewModel : PageModel
     {
         public void OnGet()
         {

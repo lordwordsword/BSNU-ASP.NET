@@ -14,5 +14,5 @@ app.MapControllerRoute(
     pattern: "",
     defaults: new { controller = "File", action = "DownloadFile" }
 );
-
+ProductRepository.init();
 app.Run();

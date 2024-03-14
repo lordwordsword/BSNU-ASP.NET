@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\user\source\repos\ASP.NET\ASP.NET
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/user/source/repos/ASP.NET/ASP.NET/Views/File/DownloadFile.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsZVxEb3dubG9hZEZpbGUuY3NodG1s
+[C:/Users/user/source/repos/ASP.NET/ASP.NET/Views/Main/AddProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxBZGRQcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/source/repos/ASP.NET/ASP.NET/Views/Main/ProductView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxQcm9kdWN0Vmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
