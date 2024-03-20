@@ -5,9 +5,10 @@ namespace ASP.NET.Views.Components.Weather
 {
     public class WeatherModel : PageModel
     {
-        public string Lat {  get; set; }
-        public string Lng { get; set; }
-        public string API_KEY_WEATHER { get; set; }
+        public double TempCelsius {  get; set; }
+        public double Pressure { get; set; }
+        public int Humidity { get; set; }
+        public double WindSpeed { get; set; }
         public void OnGet()
         {
         }

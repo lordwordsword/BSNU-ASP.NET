@@ -1,31 +1,9 @@
 ﻿
 @model ASP.NET.Views.Components.Weather.WeatherModel
-<div id="weather-info"></div>
+<div >
+    <p>Температура: @Model.TempCelsius ℃</p>
+    <p>Атмосферний тиск: @Model.Pressure гПа</p>
+    <p>Вологість: @Model.Humidity%</p>
+    <p>Швидкість вітру: @Model.WindSpeed м/с</p>
+</div>
 
-<script>
-    
-    const latitude = '@Model.Lat'.trim();
-    const longitude = '@Model.Lng'.trim();
-    const apiKey = '@Model.API_KEY_WEATHER'.trim();
-
-    function updateWeatherInfo(data) {
-        const weatherInfoDiv = document.getElementById('weather-info');
-        weatherInfoDiv.innerHTML = `
-                            <p>Температура: ${Math.round(data.main.temp - 273.15)} ℃</p>
-                    <p>Атмосферний тиск: ${data.main.pressure} гПа</p>
-                    <p>Вологість: ${data.main.humidity}%</p>
-                    <p>Швидкість вітру: ${data.wind.speed} м/с</p>
-                  `;
-    }
-
-    async function fetchWeatherData() {
-        try {
-            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`);
-            const data = await response.json();
-            updateWeatherInfo(data);
-        } catch (error) {
-            console.error('Помилка:', error);
-        }
-    }
-    fetchWeatherData();
-</script>

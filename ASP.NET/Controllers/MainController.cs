@@ -8,7 +8,7 @@ public class MainController : Controller
     [Route("")]
     public IActionResult Index()
     {
-        return RedirectToAction("MapGet", "Main");
+        return RedirectToAction("AddProduct", "Main");
     }
 
     [HttpGet]
