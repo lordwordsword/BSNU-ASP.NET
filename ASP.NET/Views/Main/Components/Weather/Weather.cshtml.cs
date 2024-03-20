@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace ASP.NET.Views.Components.Weather
 {
-    public class DefaultModel : PageModel
+    public class WeatherModel : PageModel
     {
         public string Lat {  get; set; }
         public string Lng { get; set; }

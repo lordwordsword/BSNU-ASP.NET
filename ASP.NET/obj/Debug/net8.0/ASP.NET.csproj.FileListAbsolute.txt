@@ -30,3 +30,6 @@ C:\Users\user\source\repos\ASP.NET\ASP.NET\obj\Debug\net8.0\ASP.NET.csproj.Assem
 C:\Users\user\source\repos\ASP.NET\ASP.NET\obj\Debug\net8.0\ASP.NET.csproj.CopyComplete
 C:\Users\user\source\repos\ASP.NET\ASP.NET\bin\Debug\net8.0\ASP.NET.staticwebassets.runtime.json
 C:\Users\user\source\repos\ASP.NET\ASP.NET\obj\Debug\net8.0\ASP.NET.sourcelink.json
+C:\Users\user\source\repos\ASP.NET\ASP.NET\bin\Debug\net8.0\DotEnv.dll
+C:\Users\user\source\repos\ASP.NET\ASP.NET\bin\Debug\net8.0\dotenv.net.dll
+C:\Users\user\source\repos\ASP.NET\ASP.NET\bin\Debug\net8.0\System.IO.Abstractions.dll

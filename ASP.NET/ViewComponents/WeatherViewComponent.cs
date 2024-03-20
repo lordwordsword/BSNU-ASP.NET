@@ -1,4 +1,4 @@
-﻿using dotenv;
+﻿
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -9,7 +9,7 @@ public class WeatherViewComponent : ViewComponent
         dotenv.net.DotEnv.Load();
 
         var api_key = Environment.GetEnvironmentVariable("API_KEY_WEATHER");
-        var model = new ASP.NET.Views.Components.Weather.DefaultModel
+        var model = new ASP.NET.Views.Components.Weather.WeatherModel
         {
             API_KEY_WEATHER = api_key,
             Lat = lat,

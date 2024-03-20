@@ -2,12 +2,11 @@
 @model ASP.NET.Views.Main.ProductViewModel
 @{
     List<Product>? products = TempData["Products"] as List<Product>;
-    if (products is null || TempData["mode"] is null)
+    if (products is null)
     {
         throw new Exception();
     }
 
-    string mode = TempData["mode"].ToString();
 }
 
 <!DOCTYPE html>
@@ -36,17 +35,8 @@
         <br><br>
         <input type="submit" value="Отправить">
     </form>
-    @if (mode == "list")
-    {
-        foreach(Product product in products)
-        {
-            <p>@product.Id.@product.Name - @product.Price$ (@product.CreatedDateTime)</p>
-        }
-    } 
-    @if (mode == "grid")
-    {
-        
-    }
+
+    @await Component.InvokeAsync("Table", products)
     <a href="/AddProduct">Додати продукт</a>
 </body>
 </html>

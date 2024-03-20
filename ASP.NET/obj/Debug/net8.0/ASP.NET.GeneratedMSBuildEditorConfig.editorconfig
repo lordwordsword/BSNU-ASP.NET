@@ -18,16 +18,16 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\user\source\repos\ASP.NET\ASP.NET
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/user/source/repos/ASP.NET/ASP.NET/Views/Components/Table/Default.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xUYWJsZVxEZWZhdWx0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/user/source/repos/ASP.NET/ASP.NET/Views/Components/Weather/Default.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xXZWF0aGVyXERlZmF1bHQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/user/source/repos/ASP.NET/ASP.NET/Views/Main/AddProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxBZGRQcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/source/repos/ASP.NET/ASP.NET/Views/Main/Components/Table/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxDb21wb25lbnRzXFRhYmxlXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/source/repos/ASP.NET/ASP.NET/Views/Main/Components/Weather/Weather.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxDb21wb25lbnRzXFdlYXRoZXJcV2VhdGhlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/user/source/repos/ASP.NET/ASP.NET/Views/Main/MapGet.cshtml]

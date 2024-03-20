@@ -1,7 +1,7 @@
 ﻿@model ASP.NET.Views.Main.MapGetModel
 @{
-    var lat_ = 46.96694764180267;
-    var lng_ = 31.991358232624165;
+    var lat_ = 46.975033;
+    var lng_ = 31.994583;
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -22,8 +22,8 @@
 
             function initMap() {
                 map = new google.maps.Map(document.getElementById('map'), {
-                center: { lat: @lat_, lng: @lng_ },
-                    zoom: 2
+                    center: { lat: 46.975033, lng: 31.994583 }, 
+                    zoom: 10
                 });
 
 
@@ -46,8 +46,8 @@
                 document.getElementById('latitude').innerText = location.lat();
                 document.getElementById('longitude').innerText = location.lng();
 
-                document.getElementsByName('lat').value = location.lat();
-                document.getElementsByName('lng').value = location.lng();
+                document.getElementById('lat').value = location.lat();
+                document.getElementById('lng').value = location.lng();
             }
 
             document.getElementById('getCoordinatesBtn').addEventListener('click', function () {
@@ -61,15 +61,16 @@
 
 
         <div>
-        <p>Latitude: <span id="latitude">@lat_</span></p>
-        <p>Longitude: <span id="longitude"> @lng_</span></p>
+        <p>Latitude: <span id="latitude">@lat_.ToString(System.Globalization.CultureInfo.InvariantCulture)</span></p>
+        <p>Longitude: <span id="longitude"> @lng_.ToString(System.Globalization.CultureInfo.InvariantCulture)</span></p>
         </div>
 
         <form action="Map" method="post">
-        <input type="hidden" name="lat" id="lat" value="@lat_">
-        <input type="hidden" name="lng" id="lng" value=" @lng_">
+        <input type="hidden" name="lat" id="lat" value="@lat_.ToString(System.Globalization.CultureInfo.InvariantCulture)">
+        <input type="hidden" name="lng" id="lng" value=" @lng_.ToString(System.Globalization.CultureInfo.InvariantCulture)">
             <input type="submit" value="Дізнатись погоду">
         </form>
+    <a href="/AddProduct">Додати продукт</a>
     </body>
 
 </html>
