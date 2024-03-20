@@ -2,6 +2,28 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "DotEnv/0.0.1.1": {
+        "type": "package",
+        "dependencies": {
+          "SimpleJson": "0.38.0",
+          "System.IO.Abstractions": "1.4.0.86"
+        },
+        "compile": {
+          "lib/net40/DotEnv.dll": {}
+        },
+        "runtime": {
+          "lib/net40/DotEnv.dll": {}
+        }
+      },
+      "dotenv.net/3.1.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/dotenv.net.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/dotenv.net.dll": {}
+        }
+      },
       "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
@@ -14,10 +36,49 @@
             "related": ".xml"
           }
         }
+      },
+      "SimpleJson/0.38.0": {
+        "type": "package"
+      },
+      "System.IO.Abstractions/1.4.0.86": {
+        "type": "package",
+        "compile": {
+          "lib/net35/System.IO.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/net35/System.IO.Abstractions.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "DotEnv/0.0.1.1": {
+      "sha512": "6Dzbp8/xTWDNqEJBc8vTwdL2Ydelq3NWQFonpfbr8ZnQ8b24oCjhHLb29dZlY3+VoGw0C1ZmM6BOc58u9Hqqfw==",
+      "type": "package",
+      "path": "dotenv/0.0.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "dotenv.0.0.1.1.nupkg.sha512",
+        "dotenv.nuspec",
+        "lib/net40/DotEnv.dll"
+      ]
+    },
+    "dotenv.net/3.1.3": {
+      "sha512": "gzksGrozUM/6OzBL2M99EINDLB5vhZScnRw5/oYaKx0O4PWusCBzzq9JCofhP8nL3uoli6V7SLmrwpF/PTj8XQ==",
+      "type": "package",
+      "path": "dotenv.net/3.1.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "dotenv.net.3.1.3.nupkg.sha512",
+        "dotenv.net.nuspec",
+        "lib/netstandard1.6/dotenv.net.dll",
+        "lib/netstandard2.0/dotenv.net.dll",
+        "lib/netstandard2.1/dotenv.net.dll"
+      ]
+    },
     "Newtonsoft.Json/13.0.3": {
       "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
       "type": "package",
@@ -47,11 +108,38 @@
         "newtonsoft.json.nuspec",
         "packageIcon.png"
       ]
+    },
+    "SimpleJson/0.38.0": {
+      "sha512": "Qvxm8S8fXa6/U6GLm1CJtDIqFFYKKw8cVaqMA/0I68q2avYZijt1IeEw6Y6PD2u5Hln1WrIR30ZseZOAWI8Ykg==",
+      "type": "package",
+      "path": "simplejson/0.38.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "SimpleJson.psm1",
+        "content/SimpleJson.cs.pp",
+        "simplejson.0.38.0.nupkg.sha512",
+        "simplejson.nuspec"
+      ]
+    },
+    "System.IO.Abstractions/1.4.0.86": {
+      "sha512": "Qjm6uyJAWR/Ct1Uoy1MLkMRZq8EBWTN/9dcRQVCEPFiEv9IK0LCCt1VkvOpGKcRWllJO0Y1sd9NcqGjkcECz2Q==",
+      "type": "package",
+      "path": "system.io.abstractions/1.4.0.86",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/System.IO.Abstractions.dll",
+        "system.io.abstractions.1.4.0.86.nupkg.sha512",
+        "system.io.abstractions.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "Newtonsoft.Json >= 13.0.3"
+      "DotEnv >= 0.0.1.1",
+      "Newtonsoft.Json >= 13.0.3",
+      "dotenv.net >= 3.1.3"
     ]
   },
   "packageFolders": {
@@ -93,9 +181,17 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "DotEnv": {
+            "target": "Package",
+            "version": "[0.0.1.1, )"
+          },
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[13.0.3, )"
+          },
+          "dotenv.net": {
+            "target": "Package",
+            "version": "[3.1.3, )"
           }
         },
         "imports": [
@@ -120,5 +216,27 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Пакет \"DotEnv 0.0.1.1\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\", а не целевой платформы проекта \"net8.0\". Этот пакет может быть не полностью совместим с вашим проектом.",
+      "libraryId": "DotEnv",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Пакет \"System.IO.Abstractions 1.4.0.86\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\", а не целевой платформы проекта \"net8.0\". Этот пакет может быть не полностью совместим с вашим проектом.",
+      "libraryId": "System.IO.Abstractions",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

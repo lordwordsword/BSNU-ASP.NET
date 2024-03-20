@@ -45,17 +45,7 @@
     } 
     @if (mode == "grid")
     {
-        <table>
-            @foreach(Product product in products)
-            {
-                    <tr>
-                    <td>@product.Id</td>
-                    <td>@product.Name</td>
-                    <td>@product.Price</td>
-                    <td>@product.CreatedDateTime</td>
-                     </tr>
-            }
-        </table>
+        
     }
     <a href="/AddProduct">Додати продукт</a>
 </body>

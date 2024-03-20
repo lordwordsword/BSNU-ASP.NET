@@ -1,0 +1,76 @@
+﻿@model ASP.NET.Views.Main.MapGetModel
+@{
+    var lat_ = 46.96694764180267;
+    var lng_ = 31.991358232624165;
+}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>якартаякартаякартаякартаякартаякартаякартаякартаякартаякартаякартаякартаякартаякарта</title>
+    </head>
+    <body>
+
+        <h2>Map Page</h2>
+
+        <div id="map" style="height: 400px;"></div>
+
+        <script>
+            var map;
+            var marker;
+
+            function initMap() {
+                map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: @lat_, lng: @lng_ },
+                    zoom: 2
+                });
+
+
+                google.maps.event.addListener(map, 'click', function (event) {
+                    placeMarker(event.latLng);
+                });
+            }
+
+
+            function placeMarker(location) {
+                if (marker) {
+                    marker.setMap(null);
+                }
+                marker = new google.maps.Marker({
+                    position: location,
+                    map: map,
+                    draggable: true
+                });
+
+                document.getElementById('latitude').innerText = location.lat();
+                document.getElementById('longitude').innerText = location.lng();
+
+                document.getElementsByName('lat').value = location.lat();
+                document.getElementsByName('lng').value = location.lng();
+            }
+
+            document.getElementById('getCoordinatesBtn').addEventListener('click', function () {
+                var latitude = marker.getPosition().lat();
+                var longitude = marker.getPosition().lng();
+
+            });
+        </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=@Model.API_KEY_JS_GOOGLE_MAP&callback=initMap" async defer></script>
+
+
+        <div>
+        <p>Latitude: <span id="latitude">@lat_</span></p>
+        <p>Longitude: <span id="longitude"> @lng_</span></p>
+        </div>
+
+        <form action="Map" method="post">
+        <input type="hidden" name="lat" id="lat" value="@lat_">
+        <input type="hidden" name="lng" id="lng" value=" @lng_">
+            <input type="submit" value="Дізнатись погоду">
+        </form>
+    </body>
+
+</html>
+

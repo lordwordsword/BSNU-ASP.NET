@@ -1,0 +1,13 @@
+﻿@model ASP.NET.Views.Main.MapPostModel
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Погода</title>
+</head>
+<body>
+    <h1>Погода</h1>
+    @await Component.InvokeAsync("Weather", new { Lat = Model.Lat, Lng = Model.Lng })
+</body>
+</html>
