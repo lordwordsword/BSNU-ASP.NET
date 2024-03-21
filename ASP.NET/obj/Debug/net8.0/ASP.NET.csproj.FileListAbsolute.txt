@@ -1,5 +1,3 @@
-C:\Users\user\source\repos\ASP.NET\ASP.NET\bin\Debug\net8.0\appsettings.Development.json
-C:\Users\user\source\repos\ASP.NET\ASP.NET\bin\Debug\net8.0\appsettings.json
 C:\Users\user\source\repos\ASP.NET\ASP.NET\bin\Debug\net8.0\ASP.NET.exe
 C:\Users\user\source\repos\ASP.NET\ASP.NET\bin\Debug\net8.0\ASP.NET.deps.json
 C:\Users\user\source\repos\ASP.NET\ASP.NET\bin\Debug\net8.0\ASP.NET.runtimeconfig.json

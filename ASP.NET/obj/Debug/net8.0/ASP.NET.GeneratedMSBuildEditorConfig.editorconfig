@@ -18,26 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\user\source\repos\ASP.NET\ASP.NET
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/user/source/repos/ASP.NET/ASP.NET/Views/Main/AddProduct.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxBZGRQcm9kdWN0LmNzaHRtbA==
+[C:/Users/user/source/repos/ASP.NET/ASP.NET/Views/Main/MakeAnAppointment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxNYWtlQW5BcHBvaW50bWVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/ASP.NET/ASP.NET/Views/Main/Components/Table/Default.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxDb21wb25lbnRzXFRhYmxlXERlZmF1bHQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/user/source/repos/ASP.NET/ASP.NET/Views/Main/Components/Weather/Weather.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxDb21wb25lbnRzXFdlYXRoZXJcV2VhdGhlci5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/user/source/repos/ASP.NET/ASP.NET/Views/Main/MapGet.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxNYXBHZXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/user/source/repos/ASP.NET/ASP.NET/Views/Main/MapPost.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxNYXBQb3N0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/user/source/repos/ASP.NET/ASP.NET/Views/Main/ProductView.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxQcm9kdWN0Vmlldy5jc2h0bWw=
+[C:/Users/user/source/repos/ASP.NET/ASP.NET/Views/Main/Success.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxTdWNjZXNzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

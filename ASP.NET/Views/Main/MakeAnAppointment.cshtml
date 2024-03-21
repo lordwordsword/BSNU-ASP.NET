@@ -1,0 +1,58 @@
+﻿@model ConsultationRequest
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Додавання (ні, віднімання)</title>
+</head>
+<body>
+
+<h2>Реєстрація на консультацію</h2>
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <div class="alert alert-danger">
+            <strong>Помилка:</strong>
+            <ul>
+                @foreach (var key in ViewData.ModelState.Keys)
+                {
+                    foreach (var error in ViewData.ModelState[key].Errors)
+                    {
+                        <li>@error.ErrorMessage</li>
+                    }
+                }
+            </ul>
+        </div>
+    }
+<form asp-action="MakeAnAppointment" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="FullName">Ім'я: </label>
+            <input asp-for="FullName" name="FullName" class="form-control" />
+        <span asp-validation-for="FullName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+            <label asp-for="Email">Пошта: </label>
+            <input asp-for="Email" name="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ConsultationDate">Дата консультації: </label>
+            <input asp-for="ConsultationDate" name="ConsultationDate" type="date" class="form-control" />
+        <span asp-validation-for="ConsultationDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Type">Тип: </label>
+            <select asp-for="Type" name="Type" class="form-control">
+            <option value="JavaScript">JavaScript</option>
+            <option value="C#">C#</option>
+            <option value="Java">Java</option>
+            <option value="Python">Python</option>
+            <option value="Основи">Основи</option>
+        </select>
+        <span asp-validation-for="Type" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Зареєструватися</button>
+</form>
+</body>
+</html>

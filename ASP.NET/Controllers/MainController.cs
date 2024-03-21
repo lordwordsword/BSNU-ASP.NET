@@ -1,82 +1,35 @@
 ﻿using ASP.NET.Views.Main;
 using Microsoft.AspNetCore.Mvc;
 using System.Globalization;
+using System.Reflection;
 using System.Text;
 
 public class MainController : Controller
 {
-    [Route("")]
-    public IActionResult Index()
-    {
-        return RedirectToAction("AddProduct", "Main");
-    }
-
     [HttpGet]
-    [Route("AddProduct")]
-    public IActionResult AddProduct()
+
+    public IActionResult MakeAnAppointment()
     {
         return View();
     }
 
     [HttpPost]
-    [Route("AddProduct")]
-    public IActionResult AddProductPut(string name, string price)
+
+    public IActionResult MakeAnAppointment(ConsultationRequest model)
+
     {
-        bool result = false;
-        try
+        Console.WriteLine("Model state: " + ModelState.IsValid);
+        Console.WriteLine("Model data: " + model.FullName + ", " + model.Email + ", " + model.ConsultationDate + ", " + model.Type);
+        if (ModelState.IsValid)
         {
-            Product product = new Product(name, decimal.Parse(price, CultureInfo.InvariantCulture), DateTime.Now);
-            result = ProductRepository.AddProduct(product);
+            return View("Success", model);
         }
-        catch{}
-        TempData["Status"] = result;
-        return View("AddProduct");
-    }
-
-    [HttpGet]
-    [HttpPost]
-    [Route("ProductView")]
-    public IActionResult ProductView(string? mode)
-    {
-        if (mode == null)
-        {
-            TempData["mode"] = "list";
-        }
-        else
-        {
-            TempData["mode"] = mode;
-            
-        }
-        TempData["Products"] = ProductRepository.GetProductList();
-        return View();
-    }
-
-
-    [HttpGet]
-    [Route("Map")]
-    public IActionResult MapGet()
-    {
-        dotenv.net.DotEnv.Load();
-
-        var api_key = Environment.GetEnvironmentVariable("API_KEY_JS_GOOGLE_MAP");
-        var model = new MapGetModel
-        {
-            API_KEY_JS_GOOGLE_MAP = api_key,
-        };
-
         return View(model);
     }
 
-    [HttpPost]
-    [Route("Map")]
-    public IActionResult MapPost(string lat, string lng)
-    {
-        var model = new MapPostModel
-        {
-            Lat = lat,
-            Lng = lng
-        };
 
+    public IActionResult Success(ConsultationRequest model)
+    {
         return View(model);
     }
 }

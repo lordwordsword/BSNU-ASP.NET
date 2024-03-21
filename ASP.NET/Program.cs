@@ -11,8 +11,6 @@ app.UseRouting();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "",
-    defaults: new { controller = "Main", action = "AddProduct" }
-);
-ProductRepository.init();
+    pattern: "{controller=Main}/{action=MakeAnAppointment}/"); // Обновленный маршрут
+
 app.Run();
