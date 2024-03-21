@@ -1,4 +1,5 @@
-﻿@model ConsultationRequest
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model ConsultationRequest
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +12,7 @@
 <h2>Реєстрація на консультацію</h2>
     @if (!ViewData.ModelState.IsValid)
     {
+        <!--цей блок виводить усі помилки, у той час як у формі красивенько вони виводяться по одній-->
         <div class="alert alert-danger">
             <strong>Помилка:</strong>
             <ul>
@@ -25,25 +27,24 @@
         </div>
     }
 <form asp-action="MakeAnAppointment" method="post">
-    <div asp-validation-summary="All" class="text-danger"></div>
     <div class="form-group">
         <label asp-for="FullName">Ім'я: </label>
-            <input asp-for="FullName" name="FullName" class="form-control" />
+            <input asp-for="FullName"  class="form-control" />
         <span asp-validation-for="FullName" class="text-danger"></span>
     </div>
     <div class="form-group">
             <label asp-for="Email">Пошта: </label>
-            <input asp-for="Email" name="Email" class="form-control" />
+            <input asp-for="Email"  class="form-control" />
         <span asp-validation-for="Email" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="ConsultationDate">Дата консультації: </label>
-            <input asp-for="ConsultationDate" name="ConsultationDate" type="date" class="form-control" />
+            <input asp-for="ConsultationDate"  type="date" class="form-control" />
         <span asp-validation-for="ConsultationDate" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="Type">Тип: </label>
-            <select asp-for="Type" name="Type" class="form-control">
+            <select asp-for="Type" class="form-control">
             <option value="JavaScript">JavaScript</option>
             <option value="C#">C#</option>
             <option value="Java">Java</option>
