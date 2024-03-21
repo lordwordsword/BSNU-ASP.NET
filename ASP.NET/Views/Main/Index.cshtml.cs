@@ -1,12 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace ASP.NET.Views.Main
+
+public class IndexModel : PageModel
 {
-    public class IndexModel : PageModel
+    public List<User> Users { get; set; }
+    public List<Company> Companies { get; set; }
+    public void OnGet()
     {
-        public void OnGet()
-        {
-        }
     }
 }
