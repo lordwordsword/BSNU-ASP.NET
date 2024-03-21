@@ -1,0 +1,35 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model IEnumerable<User>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Индекс</title>
+</head>
+<body>
+<h2>Список користувачів</h2>
+
+    <p><a asp-action="Create" asp-controller="Main">Додати користувача</a></p>
+<table class="table">
+
+    <tr><th>Ім'я</th><th>Прізвище</th><th>Вік</th></tr>
+
+    @foreach (var item in Model)
+
+    {
+
+        <tr>
+
+            <td>@item.FirstName</td>
+            <td>@item.LastName</td>
+            <td>@item.Age</td>
+
+        </tr>
+
+    }
+
+</table>
+</body>
+</html>

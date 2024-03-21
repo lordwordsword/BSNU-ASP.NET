@@ -1,35 +1,37 @@
-﻿using ASP.NET.Views.Main;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Globalization;
 using System.Reflection;
 using System.Text;
 
 public class MainController : Controller
 {
-    [HttpGet]
+    ApplicationContext db;
+    public MainController(ApplicationContext context)
+    {
+        db = context;
+    }
 
-    public IActionResult MakeAnAppointment()
+
+    public async Task<IActionResult> Index()
+    {
+        return View(await db.Users.ToListAsync());
+    }
+
+    public IActionResult Create()
     {
         return View();
     }
 
     [HttpPost]
-
-    public IActionResult MakeAnAppointment(ConsultationRequest model)
-
+    public async Task<IActionResult> Create(User user)
     {
-        Console.WriteLine("Model state: " + ModelState.IsValid);
-        Console.WriteLine("Model data: " + model.FullName + ", " + model.Email + ", " + model.ConsultationDate + ", " + model.Type);
-        if (ModelState.IsValid)
-        {
-            return View("Success", model);
-        }
-        return View(model);
+        Console.WriteLine(user.FirstName + " " + user.LastName + " " + user.Age);
+        db.Users.Add(user);
+        
+        await db.SaveChangesAsync();
+        return RedirectToAction("Index");
     }
 
 
-    public IActionResult Success(ConsultationRequest model)
-    {
-        return View(model);
-    }
 }

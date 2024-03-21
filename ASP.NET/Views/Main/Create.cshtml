@@ -1,0 +1,32 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model User
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>якартаякартаякартаякартаякартаякартаякартаякартаякартаякартаякартаякартаякартаякарта</title>
+</head>
+<body>
+<h2>Додати користувача</h2>
+
+<form asp-action="Create" asp-controller="Main" method="post">
+    <p>
+            <label asp-for="FirstName">Ім'я</label><br />
+            <input type="text"  asp-for="FirstName" />
+    </p>
+        <p>
+            <label asp-for="LastName">Прізвище</label><br />
+            <input type="text" asp-for="LastName" />
+        </p>
+    <p>
+        <label asp-for="Age">Вік</label><br />
+            <input type="number"  asp-for="Age" />
+    </p>
+    <p>
+        <input type="submit" value="Надіслати" />
+    </p>
+</form>
+</body>
+</html>

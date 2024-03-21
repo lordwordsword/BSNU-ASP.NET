@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace ASP.NET.Views.Main
 {
-    public class SuccessModel : PageModel
+    public class IndexModel : PageModel
     {
         public void OnGet()
         {
