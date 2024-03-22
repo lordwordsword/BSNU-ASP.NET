@@ -1,16 +1,14 @@
 var builder = WebApplication.CreateBuilder(args);
-
-builder.Services.AddControllersWithViews();
-
+builder.Services.AddMvc(options =>
+{
+    options.Filters.Add(typeof(LogActionFilter));
+    options.Filters.Add(new UniqueUsersFilter("Users.txt"));
+});
 var app = builder.Build();
-
-app.UseHttpsRedirection();
-app.UseStaticFiles();
-
-app.UseRouting();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Main}/{action=MakeAnAppointment}/"); // Обновленный маршрут
+    pattern: "",
+    defaults: new { controller = "Main", action = "Index" });
 
 app.Run();
